@@ -1,0 +1,9 @@
+port = COM21
+baudSelect = 5
+bitstream = 30
+sLog = farTest
+startChar = $
+delimiter = ,
+CSDelimiter = ;
+endChar = *
+lengthParam = 1

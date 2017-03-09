@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+   <Document>
+      <name>gLog</name>
+      <Placemark>
+         <Snippet maxLines="0"> </Snippet>
+         <description> </description>
+         <name>Line 1</name>
+         <LineString>
+            <altitudeMode>absolute</altitudeMode>
+            <coordinates>45.936,45.001,9001</coordinates>
+         </LineString>
+      </Placemark>
+   </Document>
+</kml>
