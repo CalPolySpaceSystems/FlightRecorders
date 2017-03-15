@@ -96,7 +96,7 @@ try
     
    % Read file into cell array
    c = textscan(configID,'%s %*s %s');
-   [lines,a] = size(c{1});
+   [lines,null] = size(c{1});
    
     for i = 1:lines
         config(i,1) = c{1}(i,1);
@@ -458,8 +458,16 @@ if  serialOpen == false
                                 
                         case endChar % The last character of the string
                             
-                            [lengthPass,checkSumPass,syntaxPass] = checkInput(stringBuffer,checkLength,delimiter,CSDelimiter,cSum);
+                            try
                             
+                                [lengthPass,checkSumPass,syntaxPass] = checkInput(stringBuffer,checkLength,delimiter,CSDelimiter,cSum);
+                            
+                            catch
+                            
+                                syntaxPass = false;
+                                
+                            end    
+                                
                             if syntaxPass
                                
                                 if lengthPass && checkSumPass
