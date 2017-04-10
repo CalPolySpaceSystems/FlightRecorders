@@ -9,39 +9,132 @@
 
 //Variables
 int16_t fakeDataSize;
+byte R_1,R_2,R_3,R_4
 
-int chipSelect = 10;
-int MOSI = 11;
-int MISO = 12;
-int CLK = 13;
+bool highCapacity = true;
+int SDversion = 3;
+
+
+int SDSelect = 3; //In the end I'll use an inverter to make this happen maybe.
+int baroSelect = 4;
 
 String data;
 
 void setup() {
   // put your setup code here, to run once:
 
-pinMode(chipSelect,OUTPUT);
-digitalWrite(chipSelect,HIGH);
+  pinMode(SDSelect,OUTPUT);
+  digitalWrite(SDSelect,HIGH);
 
-pinMode(MOSI,OUTPUT);
-digitalWrite(MOSI,LOW);
+  // Begin SPI
+  SPI.begin();
+  setDataMode(SPI_MODE1);
 
-pinMode(MISO,INPUT);
+  //Initialize Barometer
 
-pinMode(CLK,OUTPUT);
-digitalWrite(CLK,LOW);
+  //Initialize SD card
 
-//initialize SD card
-delay(5);
+    //digitalWrite(SDSelect,HIGH); //is already high
   for i < 10{
-  shiftOut(MOSI,CLK,LSBFIRST,0xFF);
-  i++
+
+    SPI.transfer(0xFF); //>74 Cycles of Dummy clock with DI(MOSI) High
+
+  i++}
+
+  R1 = SPI.transfer(0x40); //Response from sending CMD0, resets SD card
+    
+    if R1 <> 0X01{ // i can do this better
+      //errorScream
+    }
+  
+  SPI.transfer(0x48); //send CMD 8
+  
+  SPI.transfer(0x00); //Argument
+  SPI.transfer(0x00);
+  SPI.transfer(0x01);
+  R_1 = SPI.transfer(0xAA); // Starts recieving
+  R_2 = SPI.transfer(0x00);
+  R_3 = SPI.transfer(0x00);
+  R_4 = SPI.transfer(0x00);
+
+  if R_1 = 0x05{ // initialize for SDCv1 or MMCv3
+
+  
+    
+    
   }
   
-digitalWrite(chipSelect,LOW);
+  elseif R_1 <> 0x05 {
+    
+    //errorScream
+  
+  }
+
+  
+  if (R_3 & R_4) <> 0xAB{
+
+    //errorScream
+    
+  }
+
+ 
+  // Must be ok/SDC V2 rn
+  
+  R_1 = 0x01
+  while R_1 = 0x01{
+  
+    SPI.transfer(0x81); // Send ACMD41
+
+    SPI.transfer(0x40); //Argument
+    SPI.transfer(0x00);
+    SPI.transfer(0x01);
+    R_1 = SPI.transfer(0xAA); // Starts recieving
+
+    if (R_1 | 0x01) <> 0x00{
+
+      //errorScream
+    
+    }
+  }
+
+  //accepted command
+
+  SPI.transfer(0x98); // Send CMD58
+
+  SPI.transfer(0x00); //Argument
+  SPI.transfer(0x00);
+  SPI.transfer(0x00);
+  R_1 = SPI.transfer(0x00); // Starts recieving
+  R_2 = SPI.transfer(0x00);
+  R_3 = SPI.transfer(0x00);
+  R_4 = SPI.transfer(0x00);
+
+  if R_1 = 0x40
+  
+     //Send SPI initialize command CMD8
+
+    /*
+     * 
+     * IDK how to do this
+     * 
+     */
+  if{// 0x1AA match
 
 
+    
+    }
+  
+  elseif {//no response
+    
+  }
 
+  else{ // error
+
+    //errorScream
+    
+  #endif
+   // Send either ACMD41 or CMD1
+  
 }
 
 void loop() {
@@ -50,6 +143,8 @@ void loop() {
   data = String(millis());
   fakeDataSize = 512 - (sizeof(data));
   
+  //Open SD Card
+
 
     for i < 512 {
     
@@ -62,3 +157,9 @@ void loop() {
 
 
 }
+
+void errorScream(){
+  
+  
+  
+  }
