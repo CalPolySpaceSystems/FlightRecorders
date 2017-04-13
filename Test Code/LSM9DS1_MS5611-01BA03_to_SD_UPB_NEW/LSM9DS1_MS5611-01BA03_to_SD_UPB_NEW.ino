@@ -1,8 +1,7 @@
 /*
-
-
-
-
+  Patrick Chizek
+  MicroRecorder
+  2017
 */
 
 //Standard Libraries
@@ -15,112 +14,105 @@
 #include "barometer.h"
 
 #define BUZZER 5
+#define LED 13
+#define DEBUG 1
 
 // Is debug mode?
-//bool debug = true;
+bool debug = true;
 
 // Structures for data
 struct MS5611data mData;
 struct LSMData lData;
 
 // Set CS pin to pin 
-const int chipSelect = 9;   // CS Pin 10
+const int chipSelect = 9;   // CS Pin 9
 
 // Other variables
 char fileName[11];
-String fileNAAAA;
 int lastBaroRead; // Loop time
 char logNum[2];
 void setup(){
-  pinMode(5,OUTPUT);
+//unsigned long timeStamp;
   
-  //#if debug
-    SerialUSB.begin(9600);
-    while (!SerialUSB)  {
-      ;
-    }
-  //#endif
+  pinMode(BUZZER,OUTPUT);
+  pinMode(LED,OUTPUT);
+  
+  
+    //SerialUSB.begin(9600);
+    //while (!SerialUSB)  {
+      //;
+    //}
+
   delay(200);
     
   // Gyro/Accel/Mag Setup
-  //#if debug
-    SerialUSB.println("Initializing LSM9DS1TR...");
-  //#endif
+  
+    //SerialUSB.println("Initializing LSM9DS1TR...");
   
   Wire.begin(); // Start I2C
   
   initLSM();
 
-  //#if debug
-    SerialUSB.println("LSM9DS1TR Initialized");
-    SerialUSB.println("Initializing MS5611...");
-  //#endif
+    //SerialUSB.println("LSM9DS1TR Initialized");
+    //SerialUSB.println("Initializing MS5611...");
 
   beep(440,400);
  
   initMS5611();
 
-  //#if debug
-    SerialUSB.println("MS5611 Initialized");
-  //#endif
+    //SerialUSB.println("MS5611 Initialized");
 
   beep(550,400);
    
   // SD Setup
-  //#if debug
-    SerialUSB.println("Initializing SD card...");
-  //#endif
-  
+    //SerialUSB.println("Initializing SD card...");
+
   // Check for SD 
   if (!SD.begin(chipSelect)) {
-    //#if debug
-      SerialUSB.println("Card Error");
-    //#endif
+      //SerialUSB.println("Card Error");
       errorScream();
   }
-  
-  //#if debug
-    SerialUSB.println("SD initialized.");
-  //#endif
+
+    //SerialUSB.println("SD initialized.");
 
   beep(660,400);
   
   // Make File
- //char tmp[10] =""
- for (int i = 1; i < 100; i++){ 
-  fileName[0] = '\0'; // clear array
-  logNum[0] = '\0';
-  if (i < 10) {
+  for (int i = 1; i < 100; i++){ 
+    fileName[0] = '\0'; // clear array
+    logNum[0] = '\0';
+    if (i < 10) {
       strcpy(fileName,"data");
       //Serial.println(String(i));
       strcat(fileName,"0");
       itoa(i,logNum,10);
       strcat(fileName,logNum);
       strcat(fileName,".txt");
-  } 
-  else {
-    if (i = 100) {
+    } 
+    else {
+      //Serial.println(String(i));
+      if (i > 99) {
+       //SerialUSB.println("Card full or file error.");
        errorScream();
-    }
+      }
       strcpy(fileName,"data");
       //Serial.println(String(i));
       itoa(i,logNum,10);
       strcat(fileName,logNum);
       strcat(fileName,".txt");
-  }
+      //Serial.println(fileName);
+    }
   
     if (!SD.exists(fileName)){// If file does not exist
-      fileNAAAA = String(fileName);
       break; // This will be the fileName
     } 
 
   }
-  //#if debug
-    SerialUSB.print("File Name: ");
-    SerialUSB.println(fileName);
-  //#endif
-  
-  
+
+  //SerialUSB.print("File Name: ");
+  //SerialUSB.println(fileName);
+
+  // Prime barometer for first read
   primePressureMS5611();
   lastBaroRead = millis();
   delay(10);
@@ -135,45 +127,49 @@ void loop() {
 
     if ((millis() - lastBaroRead) > 10) {
       readPressureMS5611(&mData); // Take a baro reading
+      //readTempMS5611(&mData);
+      mData.temperature = lData.temp; // Update temperature
+      
       calcAltitudeMS5611(&mData);
 
       primePressureMS5611(); // Prime baro for next reading
-
+      //primeTempMS5611();
+      
       lastBaroRead = millis();
     }
 
     readLSM(&lData); // Get 9 axis data
+
+    
     
     createDataString(dataString, &lData, &mData);
     fileName[10] = '\0';
-    SerialUSB.print(String(dataString));
+    //SerialUSB.print(String(dataString));
   // Write to SD
   // open the file. note that only one file can be open at a time,
   // so you have to close this one before opening another.
     File datalog = SD.open(fileName,FILE_WRITE);
       
-    //while (!datalog) {
-      //datalog.close();
-      //datalog = SD.open("DATALOG00.txt",FILE_WRITE);
-      //beep(440,5);
-    //}
     // if the file is available, write to it:
     if (datalog) {
+
+      digitalWrite(LED,HIGH);
     
       datalog.println(dataString);
       datalog.close();
+
+      digitalWrite(LED,LOW);
       // print to the serial port too:
 
-      //#if debug
-        SerialUSB.println(" -- W");
-      //#endif
+      //SerialUSB.println(" -- W");
     
     }
   // if the file isn't open, pop up an error:
     else {
       //#if debug
-      SerialUSB.print("Error opening ");
-      SerialUSB.println(fileName);
+      //SerialUSB.print("Error opening ");
+      //SerialUSB.println(fileName);
+      errorScream();
       
       //#endif
     }
@@ -200,7 +196,6 @@ void errorScream(){
       beep(j,8);
    
     }
-
   }
 }
 
@@ -210,10 +205,12 @@ void createDataString(char* dataString, struct LSMData *lData, struct MS5611data
     
   char tmp[32] = ""; // temporary variable to hold characters
   // timestamp
-  int timeStamp = millis();
-  
+  long timeMs = millis();
+  String timeStamp = String(timeMs);
   tmp[0] = '\0';
-  itoa(timeStamp, tmp, 10);
+  timeStamp.toCharArray(tmp,32);
+  
+  //itoa(timeStamp, tmp, 10);
   strcat(dataString,tmp);
   strcat(dataString,",");
   
