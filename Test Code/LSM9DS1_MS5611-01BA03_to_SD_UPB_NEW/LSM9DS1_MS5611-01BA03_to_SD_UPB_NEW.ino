@@ -29,8 +29,10 @@ const int chipSelect = 9;   // CS Pin 9
 
 // Other variables
 char fileName[11];
-int lastBaroRead; // Loop time
+long lastBaroRead; // Loop time
 char logNum[2];
+File datalog;
+
 void setup(){
 //unsigned long timeStamp;
   
@@ -148,7 +150,7 @@ void loop() {
   // Write to SD
   // open the file. note that only one file can be open at a time,
   // so you have to close this one before opening another.
-    File datalog = SD.open(fileName,FILE_WRITE);
+    datalog = SD.open(fileName,FILE_WRITE);
       
     // if the file is available, write to it:
     if (datalog) {
