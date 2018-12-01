@@ -1,0 +1,172 @@
+2018/11/01 14:47:12.078  INFO: COSMOS Version: 4.2.4
+2018/11/01 14:47:12.287  INFO: Processing target definition in file '/home/cpss/repos/FlightRecorders/MiniRek/config/targets/SYSTEM/target.txt'
+2018/11/01 14:47:12.470  INFO: Processing target definition in file '/home/cpss/repos/FlightRecorders/MiniRek/config/targets/MINIREK/target.txt'
+2018/11/01 14:47:12.492  INFO: Processing CmdTlmServer configuration in file: /home/cpss/repos/FlightRecorders/MiniRek/config/tools/cmd_tlm_server/cmd_tlm_server.txt
+2018/11/01 14:47:12.496  INFO: Processing CmdTlmServer configuration in file: /home/cpss/repos/FlightRecorders/MiniRek/config/targets/MINIREK/cmd_tlm_server.txt
+2018/11/01 14:47:12.617  INFO: Marshal file does not exist: /home/cpss/repos/FlightRecorders/MiniRek/outputs/tmp/marshal_41e07b1c156c978fcf9da405fde220f2.bin
+2018/11/01 14:47:15.556  INFO: Creating thread for router PREIDENTIFIED_ROUTER
+2018/11/01 14:47:15.557  INFO: Creating thread for router PREIDENTIFIED_CMD_ROUTER
+2018/11/01 14:47:15.557  INFO: Creating thread for interface MINIREK_INT
+2018/11/01 14:47:15.559  INFO: Creating thread for interface SYSTEM_INT
+2018/11/01 14:47:15.560  INFO: Starting packet reading for PREIDENTIFIED_ROUTER
+2018/11/01 14:47:15.560  INFO: Connecting to PREIDENTIFIED_ROUTER...
+2018/11/01 14:47:15.561  INFO: PREIDENTIFIED_ROUTER Connection Success
+2018/11/01 14:47:15.562  INFO: Starting connection maintenance for PREIDENTIFIED_CMD_ROUTER
+2018/11/01 14:47:15.562  INFO: Connecting to PREIDENTIFIED_CMD_ROUTER...
+2018/11/01 14:47:15.613  INFO: PREIDENTIFIED_CMD_ROUTER Connection Success
+2018/11/01 14:47:15.614  INFO: Starting packet reading for MINIREK_INT
+2018/11/01 14:47:15.614  INFO: Connecting to MINIREK_INT...
+2018/11/01 14:47:15.614  INFO: Starting packet reading for SYSTEM_INT
+2018/11/01 14:47:15.614  INFO: Connecting to SYSTEM_INT...
+2018/11/01 14:47:15.615  INFO: SYSTEM_INT Connection Success
+2018/11/01 14:47:15.618  ERROR: MINIREK_INT Connection Failed: ENOENT : No such file or directory @ rb_sysopen - COM32
+2018/11/01 14:47:15.618  ERROR: ENOENT : No such file or directory @ rb_sysopen - COM32
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/2.4.0/open-uri.rb:37:in `initialize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/2.4.0/open-uri.rb:37:in `open'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/2.4.0/open-uri.rb:37:in `open'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/io/posix_serial_driver.rb:47:in `initialize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/io/serial_driver.rb:58:in `new'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/io/serial_driver.rb:58:in `initialize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/streams/serial_stream.rb:65:in `new'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/streams/serial_stream.rb:65:in `initialize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/interfaces/serial_interface.rb:59:in `new'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/interfaces/serial_interface.rb:59:in `connect'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/tools/cmd_tlm_server/interface_thread.rb:251:in `connect'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/tools/cmd_tlm_server/interface_thread.rb:71:in `block (2 levels) in start'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/tools/cmd_tlm_server/interface_thread.rb:69:in `synchronize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/tools/cmd_tlm_server/interface_thread.rb:69:in `block in start'
+2018/11/01 14:47:20.955  INFO: Connecting to MINIREK_INT...
+2018/11/01 14:47:20.955  ERROR: MINIREK_INT Connection Failed: ENOENT : No such file or directory @ rb_sysopen - COM32
+2018/11/01 14:47:20.956  ERROR: ENOENT : No such file or directory @ rb_sysopen - COM32
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/2.4.0/open-uri.rb:37:in `initialize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/2.4.0/open-uri.rb:37:in `open'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/2.4.0/open-uri.rb:37:in `open'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/io/posix_serial_driver.rb:47:in `initialize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/io/serial_driver.rb:58:in `new'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/io/serial_driver.rb:58:in `initialize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/streams/serial_stream.rb:65:in `new'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/streams/serial_stream.rb:65:in `initialize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/interfaces/serial_interface.rb:59:in `new'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/interfaces/serial_interface.rb:59:in `connect'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/tools/cmd_tlm_server/interface_thread.rb:251:in `connect'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/tools/cmd_tlm_server/interface_thread.rb:71:in `block (2 levels) in start'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/tools/cmd_tlm_server/interface_thread.rb:69:in `synchronize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/tools/cmd_tlm_server/interface_thread.rb:69:in `block in start'
+2018/11/01 14:47:25.959  INFO: Connecting to MINIREK_INT...
+2018/11/01 14:47:25.959  ERROR: MINIREK_INT Connection Failed: ENOENT : No such file or directory @ rb_sysopen - COM32
+2018/11/01 14:47:25.960  ERROR: ENOENT : No such file or directory @ rb_sysopen - COM32
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/2.4.0/open-uri.rb:37:in `initialize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/2.4.0/open-uri.rb:37:in `open'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/2.4.0/open-uri.rb:37:in `open'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/io/posix_serial_driver.rb:47:in `initialize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/io/serial_driver.rb:58:in `new'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/io/serial_driver.rb:58:in `initialize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/streams/serial_stream.rb:65:in `new'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/streams/serial_stream.rb:65:in `initialize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/interfaces/serial_interface.rb:59:in `new'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/interfaces/serial_interface.rb:59:in `connect'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/tools/cmd_tlm_server/interface_thread.rb:251:in `connect'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/tools/cmd_tlm_server/interface_thread.rb:71:in `block (2 levels) in start'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/tools/cmd_tlm_server/interface_thread.rb:69:in `synchronize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/tools/cmd_tlm_server/interface_thread.rb:69:in `block in start'
+2018/11/01 14:47:30.969  INFO: Connecting to MINIREK_INT...
+2018/11/01 14:47:30.969  ERROR: MINIREK_INT Connection Failed: ENOENT : No such file or directory @ rb_sysopen - COM32
+2018/11/01 14:47:30.970  ERROR: ENOENT : No such file or directory @ rb_sysopen - COM32
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/2.4.0/open-uri.rb:37:in `initialize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/2.4.0/open-uri.rb:37:in `open'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/2.4.0/open-uri.rb:37:in `open'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/io/posix_serial_driver.rb:47:in `initialize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/io/serial_driver.rb:58:in `new'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/io/serial_driver.rb:58:in `initialize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/streams/serial_stream.rb:65:in `new'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/streams/serial_stream.rb:65:in `initialize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/interfaces/serial_interface.rb:59:in `new'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/interfaces/serial_interface.rb:59:in `connect'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/tools/cmd_tlm_server/interface_thread.rb:251:in `connect'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/tools/cmd_tlm_server/interface_thread.rb:71:in `block (2 levels) in start'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/tools/cmd_tlm_server/interface_thread.rb:69:in `synchronize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/tools/cmd_tlm_server/interface_thread.rb:69:in `block in start'
+2018/11/01 14:47:35.975  INFO: Connecting to MINIREK_INT...
+2018/11/01 14:47:35.975  ERROR: MINIREK_INT Connection Failed: ENOENT : No such file or directory @ rb_sysopen - COM32
+2018/11/01 14:47:35.976  ERROR: ENOENT : No such file or directory @ rb_sysopen - COM32
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/2.4.0/open-uri.rb:37:in `initialize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/2.4.0/open-uri.rb:37:in `open'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/2.4.0/open-uri.rb:37:in `open'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/io/posix_serial_driver.rb:47:in `initialize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/io/serial_driver.rb:58:in `new'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/io/serial_driver.rb:58:in `initialize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/streams/serial_stream.rb:65:in `new'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/streams/serial_stream.rb:65:in `initialize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/interfaces/serial_interface.rb:59:in `new'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/interfaces/serial_interface.rb:59:in `connect'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/tools/cmd_tlm_server/interface_thread.rb:251:in `connect'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/tools/cmd_tlm_server/interface_thread.rb:71:in `block (2 levels) in start'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/tools/cmd_tlm_server/interface_thread.rb:69:in `synchronize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/tools/cmd_tlm_server/interface_thread.rb:69:in `block in start'
+2018/11/01 14:47:40.979  INFO: Connecting to MINIREK_INT...
+2018/11/01 14:47:40.979  ERROR: MINIREK_INT Connection Failed: ENOENT : No such file or directory @ rb_sysopen - COM32
+2018/11/01 14:47:40.980  ERROR: ENOENT : No such file or directory @ rb_sysopen - COM32
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/2.4.0/open-uri.rb:37:in `initialize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/2.4.0/open-uri.rb:37:in `open'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/2.4.0/open-uri.rb:37:in `open'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/io/posix_serial_driver.rb:47:in `initialize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/io/serial_driver.rb:58:in `new'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/io/serial_driver.rb:58:in `initialize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/streams/serial_stream.rb:65:in `new'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/streams/serial_stream.rb:65:in `initialize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/interfaces/serial_interface.rb:59:in `new'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/interfaces/serial_interface.rb:59:in `connect'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/tools/cmd_tlm_server/interface_thread.rb:251:in `connect'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/tools/cmd_tlm_server/interface_thread.rb:71:in `block (2 levels) in start'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/tools/cmd_tlm_server/interface_thread.rb:69:in `synchronize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/tools/cmd_tlm_server/interface_thread.rb:69:in `block in start'
+2018/11/01 14:47:45.981  INFO: Connecting to MINIREK_INT...
+2018/11/01 14:47:45.981  ERROR: MINIREK_INT Connection Failed: ENOENT : No such file or directory @ rb_sysopen - COM32
+2018/11/01 14:47:45.981  ERROR: ENOENT : No such file or directory @ rb_sysopen - COM32
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/2.4.0/open-uri.rb:37:in `initialize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/2.4.0/open-uri.rb:37:in `open'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/2.4.0/open-uri.rb:37:in `open'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/io/posix_serial_driver.rb:47:in `initialize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/io/serial_driver.rb:58:in `new'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/io/serial_driver.rb:58:in `initialize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/streams/serial_stream.rb:65:in `new'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/streams/serial_stream.rb:65:in `initialize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/interfaces/serial_interface.rb:59:in `new'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/interfaces/serial_interface.rb:59:in `connect'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/tools/cmd_tlm_server/interface_thread.rb:251:in `connect'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/tools/cmd_tlm_server/interface_thread.rb:71:in `block (2 levels) in start'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/tools/cmd_tlm_server/interface_thread.rb:69:in `synchronize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/tools/cmd_tlm_server/interface_thread.rb:69:in `block in start'
+2018/11/01 14:47:50.984  INFO: Connecting to MINIREK_INT...
+2018/11/01 14:47:50.984  ERROR: MINIREK_INT Connection Failed: ENOENT : No such file or directory @ rb_sysopen - COM32
+2018/11/01 14:47:50.984  ERROR: ENOENT : No such file or directory @ rb_sysopen - COM32
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/2.4.0/open-uri.rb:37:in `initialize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/2.4.0/open-uri.rb:37:in `open'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/2.4.0/open-uri.rb:37:in `open'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/io/posix_serial_driver.rb:47:in `initialize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/io/serial_driver.rb:58:in `new'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/io/serial_driver.rb:58:in `initialize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/streams/serial_stream.rb:65:in `new'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/streams/serial_stream.rb:65:in `initialize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/interfaces/serial_interface.rb:59:in `new'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/interfaces/serial_interface.rb:59:in `connect'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/tools/cmd_tlm_server/interface_thread.rb:251:in `connect'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/tools/cmd_tlm_server/interface_thread.rb:71:in `block (2 levels) in start'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/tools/cmd_tlm_server/interface_thread.rb:69:in `synchronize'
+/home/cpss/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/cosmos-4.2.4/lib/cosmos/tools/cmd_tlm_server/interface_thread.rb:69:in `block in start'
+2018/11/01 14:47:53.011  INFO: Clean disconnect from SYSTEM_INT (returned nil)
+2018/11/01 14:47:53.012  INFO: Connection Lost for SYSTEM_INT
+2018/11/01 14:47:53.113  INFO: Killing thread for router PREIDENTIFIED_ROUTER
+2018/11/01 14:47:53.113  INFO: Clean disconnect from PREIDENTIFIED_ROUTER (returned nil)
+2018/11/01 14:47:53.113  INFO: Connection Lost for PREIDENTIFIED_ROUTER
+2018/11/01 14:47:53.195  INFO: Stopped packet reading for PREIDENTIFIED_ROUTER
+2018/11/01 14:47:53.197  INFO: Disconnected from router PREIDENTIFIED_ROUTER
+2018/11/01 14:47:53.198  INFO: Killing thread for router PREIDENTIFIED_CMD_ROUTER
+2018/11/01 14:47:53.198  INFO: Stopped packet reading for PREIDENTIFIED_CMD_ROUTER
+2018/11/01 14:47:53.301  INFO: Disconnected from router PREIDENTIFIED_CMD_ROUTER
+2018/11/01 14:47:53.321  INFO: Killing thread for interface MINIREK_INT
+2018/11/01 14:47:53.322  INFO: Stopped packet reading for MINIREK_INT
+2018/11/01 14:47:53.332  INFO: Disconnected from interface MINIREK_INT
+2018/11/01 14:47:53.332  INFO: Killing thread for interface SYSTEM_INT
+2018/11/01 14:47:53.332  INFO: Stopped packet reading for SYSTEM_INT
+2018/11/01 14:47:53.342  INFO: Disconnected from interface SYSTEM_INT
